@@ -15,10 +15,15 @@
         }
     ],
     "require": {
+        "php": ">=7.0.8",
         "composer/installers": "^1.9",
+        "drupal/coder": "^8.3",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
-        "drupal/core-recommended": "^9"
+        "drupal/core-recommended": "^9",
+        "drupal/devel": "^3",
+        "drush/drush": "^10.2",
+        "kint-php/kint": "^3.3"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -81,5 +86,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "drupal/core-dev": "^9"
     }
 }

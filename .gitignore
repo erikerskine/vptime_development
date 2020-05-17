@@ -1,0 +1,50 @@
+# Ignore IDE and OS files.
+/.idea
+.DS_Store
+
+# Ignore composer.lock. This is for R&D only, not deployment.
+/composer.lock
+
+# Ignore core when managing all of a project's dependencies with Composer
+# including Drupal core.
+/web/core
+/web/modules/contrib
+/web/themes/contrib
+
+# Ignore scaffold files that are managed with Composer.
+/.editorconfig
+/.gitattributes
+/web/.csslintrc
+/web/.eslintignore
+/web/.eslintrc.json
+/web/.gitignore
+/web/.ht.router.php
+/web/.htaccess
+/web/INSTALL.txt
+/web/README.txt
+/web/example.gitignore
+/web/index.php
+/web/modules/README.txt
+/web/profiles/README.txt
+/web/robots.txt
+/web/sites/
+/web/themes/README.txt
+/web/update.php
+/web/web.config
+
+# Ignore dependencies that are managed with Composer.
+# Generally you should only ignore the root vendor directory. It's important
+# that core/assets/vendor and any other vendor directories within contrib or
+# custom module, theme, etc., are not ignored unless you purposely do so.
+/vendor/
+
+# Ignore configuration files that may contain sensitive information.
+/web/sites/*/settings*.php
+/web/sites/*/services*.yml
+
+# Ignore paths that contain user-generated content.
+/web/sites/*/files
+/web/sites/*/private
+
+# Ignore SimpleTest multi-site environment.
+/web/sites/simpletest

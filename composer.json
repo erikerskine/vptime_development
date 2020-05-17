@@ -12,6 +12,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "path",
+            "url": "../drupal-content-helper"
         }
     ],
     "require": {
@@ -23,6 +27,7 @@
         "drupal/core-recommended": "^9",
         "drupal/devel": "^3",
         "drush/drush": "^10.2",
+        "erikerskine/drupal-content-helper": "dev-master",
         "kint-php/kint": "^3.3"
     },
     "conflict": {

@@ -1,0 +1,23 @@
+field.field_settings.vptime:
+  type: mapping
+  label: 'Variable precision time settings'
+  mapping:
+    precision_low:
+      type: integer
+      label: 'Lowest acceptable precision'
+    precision_high:
+      type: integer
+      label: 'Highest acceptable precision'
+
+field.value.vptime:
+  type: mapping
+  label: 'Default value'
+  mapping:
+    value:
+      type: text
+      label: 'Value'
+
+field.widget.settings.vptime_raw:
+  type: mapping
+  label: 'Raw widget settings'
+  mapping: {  }

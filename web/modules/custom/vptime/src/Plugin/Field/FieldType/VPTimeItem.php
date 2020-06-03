@@ -30,6 +30,9 @@ class VPTimeItem extends FieldItemBase {
     $properties['value'] = DataDefinition::create('string')
       ->setLabel(new TranslatableMarkup('Value'))
       ->setRequired(TRUE);
+    $properties['timezone'] = DataDefinition::create('string')
+      ->setLabel(t('Timezone'))
+      ->setRequired(FALSE);
     $properties['start_at'] = DataDefinition::create('string')
       ->setLabel(new TranslatableMarkup('Start at'))
       ->setComputed(TRUE)
@@ -53,6 +56,10 @@ class VPTimeItem extends FieldItemBase {
       'columns' => [
         'value' => [
           'type' => 'varchar_ascii',
+          'pgsql_type' => 'text',
+        ],
+        'timezone' => [
+          'type' => 'varchar',
           'pgsql_type' => 'text',
         ],
         'start_at' => [
@@ -144,6 +151,7 @@ class VPTimeItem extends FieldItemBase {
         'vptime_precision' => ['low' => $low, 'high' => $high],
       ],
     ]);
+    $constraints[] = $constraint_manager->create('vptime_timezone', []);
 
     return $constraints;
   }

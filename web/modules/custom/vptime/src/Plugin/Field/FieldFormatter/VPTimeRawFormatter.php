@@ -2,10 +2,16 @@
 
 namespace Drupal\vptime\Plugin\Field\FieldFormatter;
 
+use DateTimeZone;
+use Drupal\Component\Datetime\DateTimePlus;
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
+use Drupal\datetime\DateTimeComputed;
+use Drupal\vptime\GregorianCalendar;
+use Symfony\Component\Serializer\Normalizer\DateTimeZoneNormalizer;
 
 /**
  * Plugin implementation of the 'vptime_default' formatter.
@@ -41,8 +47,14 @@ class VPTimeRawFormatter extends FormatterBase {
    *   The textual output generated.
    */
   protected function viewValue(FieldItemInterface $item) {
-    $iso_8601_string = $item->value;
-    return Html::escape($iso_8601_string);
+    if ($item->timezone) {
+      $components = GregorianCalendar::componentsFromString($item->value);
+      $components = GregorianCalendar::adjustTimezone($components, $item->timezone, date_default_timezone_get());
+      return Html::escape(GregorianCalendar::componentsToString($components));
+    }
+    else {
+      return Html::escape($item->value);
+    }
   }
 
 }

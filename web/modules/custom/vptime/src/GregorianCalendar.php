@@ -143,6 +143,68 @@ class GregorianCalendar {
   }
 
 
+  static function componentsToString($components) {
+    if (empty($components) || count($components) === 4) {
+      throw new \InvalidArgumentException('Components array must not be empty nor be HOUR precision.');
+    }
+
+    $precision = count($components) - 1;
+    switch ($precision) {
+      case static::YEAR:
+        return vsprintf('%04d', $components);
+      case static::MONTH:
+        return vsprintf('%04d-%02d', $components);
+        break;
+      case static::DAY:
+        return vsprintf('%04d-%02d-%02d', $components);
+        break;
+      case static::MINUTE:
+        return vsprintf('%04d-%02d-%02dT%02d:%02d', $components);
+        break;
+      case static::SECOND:
+        return vsprintf('%04d-%02d-%02dT%02d:%02d:%02d', $components);
+        break;
+      default:
+        return vsprintf('%04d-%02d-%02dT%02d:%02d:%02d.', $components) .
+          implode('', array_slice($components, 6));
+    }
+  }
+
+  /**
+   * @param \DateTimeInterface $d
+   * @param int $precision
+   *
+   * @return int[]
+   */
+  static function componentsFromDateTimeObject(\DateTimeInterface $d, $precision) {
+    $all_components = static::componentsFromString($d->format('Y-m-d\TH:i:s.u'));
+    return array_slice($all_components, 0, $precision + 1);
+  }
+
+  /**
+   * Return a new list of components in a different timezone.
+   *
+   * Note: maximum precision is microseconds, because of DateTimeImmutable.
+   *
+   * @param int[] $components
+   * @param string $from_timezone
+   * @param string $to_timezone
+   *
+   * @return int[]
+   */
+  static function adjustTimezone($components, $from_timezone, $to_timezone) {
+    $precision = count($components) - 1;
+    if ($precision < static::MINUTE) {
+      throw new \InvalidArgumentException('Components array must be at least MINUTE precision to adjust timezone.');
+    }
+
+    $str = static::componentsToString($components);
+    $d = new \DateTimeImmutable($str, new \DateTimeZone($from_timezone));
+    $d = $d->setTimezone(new \DateTimeZone($to_timezone));
+    return static::componentsFromDateTimeObject($d, $precision);
+  }
+
+
   /**
    * Convert component values to a string representation of their timestamp.
    *

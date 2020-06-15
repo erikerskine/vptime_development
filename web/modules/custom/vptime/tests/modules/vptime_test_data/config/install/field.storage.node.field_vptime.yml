@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - vptime
+id: node.field_vptime
+field_name: field_vptime
+entity_type: node
+type: vptime
+settings: {  }
+module: vptime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

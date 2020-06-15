@@ -1,0 +1,6 @@
+name: 'vptime_test_data'
+type: module
+package: Testing
+dependencies:
+  - drupal:node
+  - drupal:vptime

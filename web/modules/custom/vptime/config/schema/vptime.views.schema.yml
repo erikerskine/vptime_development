@@ -1,0 +1,11 @@
+views.filter.vptime_start:
+  type: views.filter.numeric
+
+views.filter_value.vptime_start:
+  type: views.filter_value.numeric
+
+views.filter.vptime_end:
+  type: views.filter.numeric
+
+views.filter_value.vptime_end:
+  type: views.filter_value.numeric

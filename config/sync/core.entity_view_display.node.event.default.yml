@@ -1,0 +1,30 @@
+uuid: e019b455-7cc3-4ca4-b098-0330406d18c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.field_vptime
+    - node.type.event
+  module:
+    - user
+    - vptime
+_core:
+  default_config_hash: CH1_6eLqF64QYrf-Sm3FlO-Gdahxh5NARR6uof3osPU
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  field_vptime:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: vptime_raw
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

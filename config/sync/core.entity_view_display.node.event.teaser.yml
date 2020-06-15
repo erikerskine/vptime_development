@@ -1,0 +1,24 @@
+uuid: f55ff169-6899-4d2f-bbc7-5fb1927b6c93
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.field_vptime
+    - node.type.event
+  module:
+    - user
+_core:
+  default_config_hash: lphmdzeLyW98EpxTM0pggm5pWosL4uk7054cn9j-PE0
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_vptime: true

@@ -1,0 +1,25 @@
+uuid: ebb8487c-3796-4092-a5b2-799d2cbf4439
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vptime
+    - node.type.event
+  module:
+    - vptime
+_core:
+  default_config_hash: fdXGeq1ElsgKEVDhgD0WhmfVb9nWwTlO5eZt2OQZaQ4
+id: node.event.field_vptime
+field_name: field_vptime
+entity_type: node
+bundle: event
+label: 'VP time'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  precision_low: 2
+  precision_high: 5
+field_type: vptime

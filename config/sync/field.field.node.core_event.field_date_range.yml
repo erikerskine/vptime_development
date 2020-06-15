@@ -1,0 +1,21 @@
+uuid: 0bddb84b-fd99-49f0-8ac6-3c278ea800c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_range
+    - node.type.core_event
+  module:
+    - datetime_range
+id: node.core_event.field_date_range
+field_name: field_date_range
+entity_type: node
+bundle: core_event
+label: 'Date range'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

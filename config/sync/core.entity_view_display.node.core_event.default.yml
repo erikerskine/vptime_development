@@ -1,0 +1,74 @@
+uuid: caab6c97-f2b2-4e85-800f-e68fe95e80f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.core_event.field_date
+    - field.field.node.core_event.field_date_range
+    - field.field.node.core_event.field_datetime
+    - field.field.node.core_event.field_datetime_range
+    - field.field.node.core_event.field_timestamp
+    - node.type.core_event
+  module:
+    - datetime
+    - datetime_range
+    - user
+id: node.core_event.default
+targetEntityType: node
+bundle: core_event
+mode: default
+content:
+  field_date:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_range:
+    weight: 104
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_datetime:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_datetime_range:
+    weight: 105
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_timestamp:
+    weight: 101
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

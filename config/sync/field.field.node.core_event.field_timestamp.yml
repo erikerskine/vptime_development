@@ -1,0 +1,21 @@
+uuid: fed9b061-c862-4902-a3c9-48df19b132eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_timestamp
+    - node.type.core_event
+id: node.core_event.field_timestamp
+field_name: field_timestamp
+entity_type: node
+bundle: core_event
+label: Timestamp
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1591459233
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

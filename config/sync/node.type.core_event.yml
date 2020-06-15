@@ -1,0 +1,11 @@
+uuid: 9ed23eb9-e3fa-41a8-8ef0-e33e926e824c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Core event'
+type: core_event
+description: 'A content type with core''s date and time fields.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

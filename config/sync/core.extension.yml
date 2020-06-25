@@ -1,6 +1,7 @@
 module:
   block: 0
   breakpoint: 0
+  daterange_compact: 0
   datetime: 0
   datetime_range: 0
   devel: 0

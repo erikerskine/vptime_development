@@ -26,6 +26,7 @@
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
         "drupal/devel": "^3",
+        "drupal/duration_field": "^2",
         "drush/drush": "^10.2",
         "erikerskine/drupal-content-helper": "dev-master",
         "kint-php/kint": "^3.3"

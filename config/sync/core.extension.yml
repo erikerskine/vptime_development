@@ -3,15 +3,19 @@ module:
   breakpoint: 0
   daterange_compact: 0
   datetime: 0
+  datetime_extras: 0
   datetime_range: 0
   devel: 0
+  duration_field: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
   help: 0
   node: 0
+  options: 0
   path_alias: 0
+  smart_date: 0
   system: 0
   text: 0
   toolbar: 0

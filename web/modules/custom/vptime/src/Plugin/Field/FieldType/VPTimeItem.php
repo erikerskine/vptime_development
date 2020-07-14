@@ -91,20 +91,12 @@ class VPTimeItem extends FieldItemBase {
   public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
     $element = parent::fieldSettingsForm($form, $form_state);
 
-    // TODO: we need a way to represent 'unlimited' precision here
-
     $element['precision_low'] = [
       '#type' => 'select',
       '#title' => t('Lowest precision accepted'),
       '#default_value' => $this->getSetting('precision_low'),
       '#required' => TRUE,
-      '#options' => [
-        GregorianCalendar::YEAR => $this->t('Years'),
-        GregorianCalendar::MONTH => $this->t('Months'),
-        GregorianCalendar::DAY => $this->t('Days'),
-        GregorianCalendar::MINUTE => $this->t('Minutes'),
-        GregorianCalendar::SECOND => $this->t('Seconds'),
-      ],
+      '#options' => GregorianCalendar::precisionOptions(),
     ];
 
     $element['precision_high'] = [
@@ -112,13 +104,7 @@ class VPTimeItem extends FieldItemBase {
       '#title' => t('Highest precision accepted'),
       '#default_value' => $this->getSetting('precision_high'),
       '#required' => TRUE,
-      '#options' => [
-        GregorianCalendar::YEAR => $this->t('Years'),
-        GregorianCalendar::MONTH => $this->t('Months'),
-        GregorianCalendar::DAY => $this->t('Days'),
-        GregorianCalendar::MINUTE => $this->t('Minutes'),
-        GregorianCalendar::SECOND => $this->t('Seconds'),
-      ],
+      '#options' => GregorianCalendar::precisionOptions(),
     ];
 
     $element['#element_validate'][] = [get_called_class(), 'validateFieldSettingsForm'];

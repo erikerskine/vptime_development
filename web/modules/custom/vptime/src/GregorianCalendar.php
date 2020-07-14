@@ -20,6 +20,21 @@ class GregorianCalendar {
   const MINUTE = 4;
   const SECOND = 5;
 
+  /**
+   * Precision levels suitable for a select element #options attribute.
+   *
+   * @return array
+   *   Precision names keyed by constant values defined in GregorianCalendar.
+   */
+  public static function precisionOptions() {
+    return [
+      GregorianCalendar::YEAR => t('Years'),
+      GregorianCalendar::MONTH => t('Months'),
+      GregorianCalendar::DAY => t('Days'),
+      GregorianCalendar::MINUTE => t('Minutes'),
+      GregorianCalendar::SECOND => t('Seconds'),
+    ];
+  }
 
   /**
    * Increment the smallest component by 1, roll over larger ones if needed.
